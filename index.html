@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SODALY · Preparados con gusto, para tu gusto</title>
+  <!-- Tipografías de marca: Fredoka, Poppins, Brynda Write (aproximada) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      /* Paleta oficial SODALY */
+      --rojo-tamarindo: #951024;
+      --amarillo: #efbf2e;
+      --verde-olivo: #7e8963;
+      --violeta: #533d65;
+      --beige: #c59666;
+      --naranja: #fc7418;
+      --crema: #fdf8f1;
+      --blanco: #ffffff;
+      --texto: #2e2e2e;
+      --texto-suave: #6b6b6b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--crema);
+      color: var(--texto);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ============ HEADER / NAVBAR ============ */
+    .top-bar {
+      background: var(--violeta);
+      color: white;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .top-bar i {
+      color: var(--amarillo);
+      margin-right: 6px;
+    }
+
+    nav {
+      background: var(--blanco);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--violeta);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo .logo-icon {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, var(--naranja), var(--rojo-tamarindo));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(252, 116, 24, 0.3);
+    }
+
+    .nav-logo span {
+      color: var(--naranja);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--texto);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--naranja);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--naranja);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--naranja);
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(252, 116, 24, 0.25);
+    }
+
+    .nav-cta:hover {
+      background: var(--rojo-tamarindo);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(149, 16, 36, 0.3);
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      background: linear-gradient(135deg, var(--violeta) 0%, #6b4f80 100%);
+      color: white;
+      padding: 4rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(239, 191, 46, 0.15), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(252, 116, 24, 0.15), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-text h1 span {
+      color: var(--amarillo);
+      display: block;
+    }
+
+    .hero-slogan {
+      font-family: 'Caveat Brush', cursive;
+      font-size: 1.6rem;
+      color: var(--amarillo);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--naranja);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(252, 116, 24, 0.35);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--rojo-tamarindo);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(149, 16, 36, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--amarillo);
+      color: var(--amarillo);
+      background: rgba(239, 191, 46, 0.1);
+    }
+
+    /* Mascota Nama en Hero */
+    .hero-mascot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .mascot-container {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(239,191,46,0.2), transparent 70%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .mascot-circle {
+      width: 260px;
+      height: 260px;
+      background: linear-gradient(135deg, var(--beige), #d9a87c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 -10px 30px rgba(0,0,0,0.1);
+    }
+
+    .mascot-circle::before {
+      content: '🧢';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+    }
+
+    .mascot-face {
+      font-size: 6rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+
+    .mascot-badge {
+      position: absolute;
+      bottom: 20px;
+      right: -10px;
+      background: var(--naranja);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 16px rgba(252, 116, 24, 0.4);
+      transform: rotate(-5deg);
+    }
+
+    /* ============ SECCIÓN CATEGORÍAS ============ */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header .tagline {
+      font-family: 'Caveat Brush', cursive;
+      font-size: 1.5rem;
+      color: var(--naranja);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--violeta);
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .section-header p {
+      color: var(--texto-suave);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* Filtros */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .category-btn {
+      background: var(--blanco);
+      border: 2px solid #ede4d8;
+      color: var(--texto);
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category-btn i {
+      color: var(--naranja);
+      transition: color 0.3s;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: white;
+      box-shadow: 0 8px 20px rgba(252, 116, 24, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .category-btn:hover i,
+    .category-btn.active i {
+      color: white;
+    }
+
+    /* ============ GRID DE PRODUCTOS ============ */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-card {
+      background: var(--blanco);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Cinta de categoría */
+    .card-ribbon {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--violeta);
+      color: white;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Imagen del producto (representada con gradiente + emoji) */
+    .card-img {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.15));
+    }
+
+    .menu-card:hover .card-img {
+      transform: scale(1.05);
+    }
+
+    /* Colores por categoría */
+    .menu-card[data-category="clasico"] .card-img {
+      background: linear-gradient(145deg, #f4a261, #e76f51);
+    }
+    .menu-card[data-category="picante"] .card-img {
+      background: linear-gradient(145deg, #e63946, #951024);
+    }
+    .menu-card[data-category="dulce"] .card-img {
+      background: linear-gradient(145deg, #f9c74f, #efbf2e);
+    }
+    .menu-card[data-category="frutal"] .card-img {
+      background: linear-gradient(145deg, #90be6d, #7e8963);
+    }
+    .menu-card[data-category="combo"] .card-img {
+      background: linear-gradient(145deg, #9b5de5, #533d65);
+    }
+
+    .card-img i {
+      color: rgba(255,255,255,0.95);
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
+      z-index: 1;
+    }
+
+    /* Contenido de la tarjeta */
+    .card-content {
+      padding: 1.5rem 1.4rem 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+      gap: 0.5rem;
+    }
+
+    .card-header h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--violeta);
+      line-height: 1.2;
+    }
+
+    .price {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      color: var(--rojo-tamarindo);
+      font-size: 1.15rem;
+      background: #fdf0f2;
+      padding: 0.25rem 0.7rem;
+      border-radius: 30px;
+      white-space: nowrap;
+      border: 1.5px solid #f4c6cd;
+    }
+
+    .description {
+      font-size: 0.88rem;
+      color: var(--texto-suave);
+      margin-bottom: 1rem;
+      line-height: 1.55;
+      flex: 1;
+      font-weight: 300;
+    }
+
+    /* Capas del producto */
+    .layers {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .layer-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .layer-golosina { background: #fde2e4; color: #951024; }
+    .layer-fruta { background: #e2f0d9; color: #4a6b3a; }
+    .layer-gomitas { background: #fff3cd; color: #a06a00; }
+    .layer-topping { background: #fce4d6; color: #b85c1a; }
+
+    /* Footer de la tarjeta */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f0e8dd;
+      padding-top: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--amarillo);
+      font-size: 0.85rem;
+    }
+
+    .rating span {
+      color: var(--texto-suave);
+      font-size: 0.75rem;
+      margin-left: 4px;
+    }
+
+    .btn-order {
+      background: var(--violeta);
+      border: none;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-order:hover {
+      background: var(--naranja);
+      transform: translateX(3px);
+      box-shadow: 0 6px 16px rgba(252, 116, 24, 0.3);
+    }
+
+    .btn-order i {
+      font-size: 0.8rem;
+    }
+
+    /* ============ SECCIÓN PERSONALIZACIÓN ============ */
+    .custom-section {
+      background: linear-gradient(135deg, var(--violeta), #6b4f80);
+      border-radius: 32px;
+      padding: 3rem 2rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .custom-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(239,191,46,0.2), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .custom-text h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--amarillo);
+    }
+
+    .custom-text p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .custom-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .custom-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(255,255,255,0.08);
+      padding: 1rem;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: var(--naranja);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .step-info h4 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-info p {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .custom-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cup-visual {
+      width: 200px;
+      height: 280px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px 20px 40px 40px;
+      border: 3px solid rgba(255,255,255,0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .cup-layer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      position: relative;
+    }
+
+    .cup-layer.l1 { height: 33%; background: linear-gradient(135deg, #e63946, #951024); }
+    .cup-layer.l2 { height: 34%; background: linear-gradient(135deg, #90be6d, #7e8963); }
+    .cup-layer.l3 { height: 33%; background: linear-gradient(135deg, #f9c74f, #efbf2e); }
+
+    /* ============ BENEFICIOS ============ */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .benefit-card {
+      background: var(--blanco);
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      border: 1px solid #f0e8dd;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.1);
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .benefit-icon.i1 { background: linear-gradient(135deg, var(--naranja), var(--rojo-tamarindo)); }
+    .benefit-icon.i2 { background: linear-gradient(135deg, var(--verde-olivo), #5a6b45); }
+    .benefit-icon.i3 { background: linear-gradient(135deg, var(--amarillo), #d4a017); }
+    .benefit-icon.i4 { background: linear-gradient(135deg, var(--violeta), #3d2c4a); }
+
+    .benefit-card h4 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1rem;
+      color: var(--violeta);
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+      font-weight: 300;
+    }
+
+    /* ============ NO RESULTADOS ============ */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--blanco);
+      border-radius: 24px;
+      color: var(--texto-suave);
+      font-size: 1.1rem;
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      border: 2px dashed #ede4d8;
+    }
+
+    .no-results i {
+      font-size: 3rem;
+      color: var(--naranja);
+    }
+
+    /* ============ CTA FINAL ============ */
+    .cta-final {
+      background: linear-gradient(135deg, var(--naranja), var(--rojo-tamarindo));
+      border-radius: 32px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: white;
+      max-width: 1200px;
+      margin: 3rem auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-final h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-final p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+      z-index: 1;
+      font-weight: 300;
+    }
+
+    .cta-final .btn-white {
+      background: white;
+      color: var(--rojo-tamarindo);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border: none;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cta-final .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--violeta);
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand h3 span {
+      color: var(--amarillo);
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .social-icons a:hover {
+      background: var(--naranja);
+      transform: translateY(-3px);
+    }
+
+    .footer-col h4 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--amarillo);
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      font-weight: 300;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--amarillo);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+    }
+
+    .footer-bottom i {
+      color: var(--naranja);
+      margin: 0 4px;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      .hero-text p {
+        margin: 0 auto 2rem;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-mascot {
+        order: -1;
+      }
+      .mascot-container {
+        width: 240px;
+        height: 240px;
+      }
+      .mascot-circle {
+        width: 190px;
+        height: 190px;
+      }
+      .mascot-face {
+        font-size: 4.5rem;
+      }
+      .custom-section {
+        grid-template-columns: 1fr;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+      .cta-final h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <i class="fas fa-truck-fast"></i> Entregas en el CUNOC · Quetzaltenango · Pide por WhatsApp
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-candy-cane"></i></div>
+      So<span>DALY</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#personaliza">Personaliza</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#contacto" class="nav-cta"><i class="fab fa-whatsapp"></i> Pedir ahora</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Vasitos preparados <span>llenos de sabor</span></h1>
+        <div class="hero-slogan">"Preparados con gusto, para tu gusto"</div>
+        <p>Combinamos golosinas, fruta fresca y gomitas variadas, bañadas con chamoy, limón y Tajín. Una experiencia única en cada capa, perfecta para tus descansos en la U.</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn-primary"><i class="fas fa-utensils"></i> Ver menú</a>
+          <a href="#personaliza" class="btn-secondary"><i class="fas fa-wand-magic-sparkles"></i> Arma el tuyo</a>
+        </div>
+      </div>
+      <div class="hero-mascot">
+        <div class="mascot-container">
+          <div class="mascot-circle">
+            <div class="mascot-face">😎</div>
+          </div>
+          <div class="mascot-badge">¡Hola, soy Nama!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Menú -->
+  <section class="section" id="menu">
+    <div class="section-header">
+      <div class="tagline">Descubre tu antojo</div>
+      <h2>Nuestros Menús</h2>
+      <p>Cada vasito combina 3 capas perfectas: golosinas crujientes, fruta fresca del día y gomitas variadas. Tú eliges la combinación, nosotros la magia.</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="categories" id="categoryFilters">
+      <button class="category-btn active" data-category="all"><i class="fas fa-border-all"></i> Todos</button>
+      <button class="category-btn" data-category="clasico"><i class="fas fa-star"></i> Clásicos</button>
+      <button class="category-btn" data-category="picante"><i class="fas fa-fire"></i> Picantes</button>
+      <button class="category-btn" data-category="dulce"><i class="fas fa-candy-cane"></i> Dulces</button>
+      <button class="category-btn" data-category="frutal"><i class="fas fa-apple-whole"></i> Frutales</button>
+      <button class="category-btn" data-category="combo"><i class="fas fa-users"></i> Combos</button>
+    </div>
+
+    <!-- Grid de productos -->
+    <div class="menu-grid" id="menuGrid">
+
+      <!-- Producto 1: Clásico -->
+      <div class="menu-card" data-category="clasico">
+        <span class="card-ribbon">Clásico</span>
+        <div class="card-img"><i class="fas fa-cookie-bite"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Clásico</h3>
+            <span class="price">Q15</span>
+          </div>
+          <p class="description">La combinación perfecta que todos aman: Takis crujientes, piña fresca y gomitas surtidas con chamoy, limón y Tajín.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Takis</span>
+            <span class="layer-tag layer-fruta">Piña</span>
+            <span class="layer-tag layer-gomitas">Gomitas</span>
+            <span class="layer-tag layer-topping">Chamoy</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(48)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2: Picante -->
+      <div class="menu-card" data-category="picante">
+        <span class="card-ribbon" style="background:var(--rojo-tamarindo);">Picante</span>
+        <div class="card-img"><i class="fas fa-pepper-hot"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Fuego</h3>
+            <span class="price">Q18</span>
+          </div>
+          <p class="description">Para los valientes: doble capa de Takis, pepino fresco, gomitas ácidas y una explosión de chamoy y Tajín extra.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Takis x2</span>
+            <span class="layer-tag layer-fruta">Pepino</span>
+            <span class="layer-tag layer-gomitas">Ácidas</span>
+            <span class="layer-tag layer-topping">Tajín extra</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(32)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3: Dulce -->
+      <div class="menu-card" data-category="dulce">
+        <span class="card-ribbon" style="background:var(--amarillo);color:#5a4500;">Dulce</span>
+        <div class="card-img"><i class="fas fa-ice-cream"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Sweet</h3>
+            <span class="price">Q16</span>
+          </div>
+          <p class="description">Para los amantes del dulce: nachos de maíz, manzana fresca, gomitas de ositos y lluvia de leche condensada.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Nachos</span>
+            <span class="layer-tag layer-fruta">Manzana</span>
+            <span class="layer-tag layer-gomitas">Ositos</span>
+            <span class="layer-tag layer-topping">Leche</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(27)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4: Frutal -->
+      <div class="menu-card" data-category="frutal">
+        <span class="card-ribbon" style="background:var(--verde-olivo);">Frutal</span>
+        <div class="card-img"><i class="fas fa-lemon"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Fresh</h3>
+            <span class="price">Q17</span>
+          </div>
+          <p class="description">Refrescante y cítrico: palitos de maíz, doble porción de sandía y pepino, gomitas de limón y mucho limón fresco.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Palitos</span>
+            <span class="layer-tag layer-fruta">Sandía+Pepino</span>
+            <span class="layer-tag layer-gomitas">Limón</span>
+            <span class="layer-tag layer-topping">Limón</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(19)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5: Combo -->
+      <div class="menu-card" data-category="combo">
+        <span class="card-ribbon" style="background:var(--violeta);">Combo</span>
+        <div class="card-img"><i class="fas fa-users"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>Combo "Trae a tu Cuate"</h3>
+            <span class="price">Q28</span>
+          </div>
+          <p class="description">2 vasitos SODALY Clásico a precio especial. Perfecto para compartir entre clases con tu mejor compañero de la U.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">2x Takis</span>
+            <span class="layer-tag layer-fruta">2x Piña</span>
+            <span class="layer-tag layer-gomitas">2x Gomitas</span>
+            <span class="layer-tag layer-topping">2x Chamoy</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(56)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6: Picante -->
+      <div class="menu-card" data-category="picante">
+        <span class="card-ribbon" style="background:var(--rojo-tamarindo);">Picante</span>
+        <div class="card-img"><i class="fas fa-fire-flame-curved"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Tamarindo</h3>
+            <span class="price">Q17</span>
+          </div>
+          <p class="description">El favorito de los que aman lo ácido: Takis, jícama fresca, gomitas de tamarindo y chamoy artesanal de la casa.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Takis</span>
+            <span class="layer-tag layer-fruta">Jícama</span>
+            <span class="layer-tag layer-gomitas">Tamarindo</span>
+            <span class="layer-tag layer-topping">Chamoy casa</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              <span>(41)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 7: Dulce -->
+      <div class="menu-card" data-category="dulce">
+        <span class="card-ribbon" style="background:var(--amarillo);color:#5a4500;">Dulce</span>
+        <div class="card-img"><i class="fas fa-heart"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Love</h3>
+            <span class="price">Q19</span>
+          </div>
+          <p class="description">Edición especial: galletas Oreo trituradas, fresas frescas, gomitas de corazón y sirope de chocolate con Tajín dulce.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Oreo</span>
+            <span class="layer-tag layer-fruta">Fresa</span>
+            <span class="layer-tag layer-gomitas">Corazón</span>
+            <span class="layer-tag layer-topping">Chocolate</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(63)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 8: Frutal -->
+      <div class="menu-card" data-category="frutal">
+        <span class="card-ribbon" style="background:var(--verde-olivo);">Frutal</span>
+        <div class="card-img"><i class="fas fa-seedling"></i></div>
+        <div class="card-content">
+          <div class="card-header">
+            <h3>SODALY Tropical</h3>
+            <span class="price">Q18</span>
+          </div>
+          <p class="description">Un viaje tropical: nachos de colores, mango y piña fresca, gomitas de frutas y un toque de chamoy suave.</p>
+          <div class="layers">
+            <span class="layer-tag layer-golosina">Nachos</span>
+            <span class="layer-tag layer-fruta">Mango+Piña</span>
+            <span class="layer-tag layer-gomitas">Frutas</span>
+            <span class="layer-tag layer-topping">Chamoy suave</span>
+          </div>
+          <div class="card-footer">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(35)</span>
+            </div>
+            <button class="btn-order">Pedir <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mensaje sin resultados -->
+    <div class="no-results" id="noResults">
+      <i class="fas fa-face-sad-tear"></i>
+      <p>No hay menús en esta categoría. ¡Pronto agregaremos más delicias!</p>
+    </div>
+  </section>
+
+  <!-- Sección Personalización -->
+  <section class="custom-section" id="personaliza">
+    <div class="custom-text">
+      <h3><i class="fas fa-wand-magic-sparkles"></i> Arma tu SODALY a tu gusto</h3>
+      <p>En SODALY tú tienes el control. Elige tus ingredientes favoritos y crea la combinación perfecta para tu antojo.</p>
+      <ul class="custom-steps">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-info">
+            <h4>Elige tu base crujiente</h4>
+            <p>Takis, nachos, palitos o galletas. Tú decides el crunch.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-info">
+            <h4>Agrega fruta fresca</h4>
+            <p>Piña, pepino, manzana, sandía, mango o jícama. Fruta del día.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-info">
+            <h4>Corona con gomitas</h4>
+            <p>Ositos, ácidas, de corazón, de frutas o de tamarindo.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-info">
+            <h4>Baña con toppings</h4>
+            <p>Chamoy, limón, Tajín, leche condensada o chocolate.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="custom-visual">
+      <div class="cup-visual">
+        <div class="cup-layer l1">🌮</div>
+        <div class="cup-layer l2">🍍</div>
+        <div class="cup-layer l3">🍬</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Beneficios -->
+  <section class="section" id="beneficios">
+    <div class="section-header">
+      <div class="tagline">¿Por qué SODALY?</div>
+      <h2>Beneficios que te encantarán</h2>
+      <p>Más que un snack, una experiencia universitaria completa.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon i1"><i class="fas fa-bolt"></i></div>
+        <h4>Práctico y rápido</h4>
+        <p>Vasito individual listo para llevar y disfrutar entre clases sin complicaciones.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon i2"><i class="fas fa-leaf"></i></div>
+        <h4>Fruta fresca del día</h4>
+        <p>Ingredientes frescos y de calidad, preparados al momento en cada venta.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon i3"><i class="fas fa-palette"></i></div>
+        <h4>Variedad de sabores</h4>
+        <p>Dulce, ácido y picante en un solo vasito. Tú eliges tu combinación perfecta.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon i4"><i class="fas fa-heart"></i></div>
+        <h4>Hecho con gusto</h4>
+        <p>Preparados con dedicación para que disfrutes cada capa al máximo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-final" id="contacto">
+    <h2>¿Se te antojó un SODALY?</h2>
+    <p>Haz tu pedido por WhatsApp y recógelo en nuestro punto de venta en el CUNOC. ¡Sin filas y con todo el sabor!</p>
+    <a href="https://wa.me/50212345678?text=Hola%20SODALY,%20quiero%20pedir%20mi%20vasito" target="_blank" class="btn-white">
+      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>So<span>DALY</span></h3>
+        <p>Preparados con gusto, para tu gusto. Vasitos locos de gomitas y golosinas con fruta fresca, chamoy, limón y Tajín.</p>
+        <div class="social-icons">
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Menú</h4>
+        <ul>
+          <li><a href="#menu">Clásicos</a></li>
+          <li><a href="#menu">Picantes</a></li>
+          <li><a href="#menu">Dulces</a></li>
+          <li><a href="#menu">Frutales</a></li>
+          <li><a href="#menu">Combos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#personaliza">Personaliza tu vasito</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#">SODALY Club</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><i class="fas fa-heart"></i> SODALY · Emprendimiento universitario CUNOC · Quetzaltenango, Guatemala</p>
+      <p style="margin-top:0.5rem;">© 2025 SODALY. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const filterButtons = document.querySelectorAll('.category-btn');
+      const menuCards = document.querySelectorAll('.menu-card');
+      const noResultsDiv = document.getElementById('noResults');
+
+      function filterMenu(category) {
+        let visibleCount = 0;
+        menuCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        noResultsDiv.style.display = visibleCount === 0 ? 'flex' : 'none';
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          filterMenu(this.getAttribute('data-category'));
+        });
+      });
+
+      // Efecto en botones "Pedir"
+      document.querySelectorAll('.btn-order').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const original = this.innerHTML;
+          this.innerHTML = '¡Listo! <i class="fas fa-check"></i>';
+          this.style.background = 'var(--naranja)';
+          setTimeout(() => {
+            this.innerHTML = original;
+            this.style.background = '';
+          }, 1300);
+        });
+      });
+
+      // Smooth scroll para enlaces internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      filterMenu('all');
+    })();
+  </script>
+
+</body>
+</html>
